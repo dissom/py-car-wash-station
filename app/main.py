@@ -62,10 +62,10 @@ class CarWashStation:
         if self.clean_power > car.clean_mark:
             car.clean_mark = self.clean_power
 
-    def cars_to_serve(self, cars: List[Car]) -> Car:
+    def cars_to_serve(self, cars: List[Car]) -> List[Car]:
         return [car for car in cars if car.clean_mark < self.clean_power]
 
-    def serve_cars(self, cars: List["Car"]) -> None:
+    def serve_cars(self, cars: List[Car]) -> float:
         cars_to_serve = self.cars_to_serve(cars)
 
         income = 0
